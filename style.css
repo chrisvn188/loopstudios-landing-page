@@ -120,6 +120,12 @@ a {
   margin-top: 6em;
 }
 
+@media (min-width: 768px) {
+  .page > * + * {
+    margin-top: 8em;
+  }
+}
+
 @media (min-width: 1200px) {
   .page > * + * {
     margin-top: 10em;
@@ -178,6 +184,7 @@ a {
 }
 
 .top-nav {
+  background-color: var(--color-black);
   position: fixed;
   left: 0;
   top: 0;
@@ -191,7 +198,6 @@ a {
 
 .show-nav {
   transform: translate(0);
-  background-color: var(--color-black);
 }
 
 @media (min-width: 768px) {
@@ -277,7 +283,13 @@ a {
 }
 
 .hero {
-  padding: 10em 0;
+  padding: 12em 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 10em 0;
+  }
 }
 
 .hero > h1 {
