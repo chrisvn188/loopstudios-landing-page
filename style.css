@@ -172,8 +172,71 @@ a {
   align-items: center;
 }
 
+.nav-container .logo {
+  position: relative;
+  z-index: 2;
+}
+
 .top-nav {
-  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  transform: translateX(-100%);
+  padding: 16em 1.5em 0 1.5em;
+  transition: transform 0.3s ease-out;
+}
+
+.show-nav {
+  transform: translate(0);
+  background-color: var(--color-black);
+}
+
+@media (min-width: 768px) {
+  .top-nav {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    height: auto;
+    width: auto;
+    transform: translate(0);
+  }
+}
+
+.top-nav__links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .top-nav__links-list {
+    flex-direction: row;
+  }
+}
+
+.top-nav__link {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--color-white);
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .top-nav__link {
+    font-family: "Alata", sans-serif;
+    text-transform: capitalize;
+    font-size: 1rem;
+  }
+}
+
+.top-nav__link:hover {
+  border-bottom: 1px solid #eee;
 }
 
 @media (min-width: 768px) {
@@ -181,22 +244,9 @@ a {
     display: block;
   }
 
-  .top-nav__links-list {
-    display: flex;
-    gap: 2em;
-  }
-
   .top-nav__link {
-    display: inline-block;
     font-size: 1rem;
-    color: var(--color-white);
     padding: 0.5em 0;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s;
-  }
-
-  .top-nav__link:hover {
-    border-bottom: 1px solid #eee;
   }
 }
 
@@ -206,6 +256,8 @@ a {
   color: var(--color-white);
   padding: 0;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -225,7 +277,7 @@ a {
 }
 
 .hero {
-  padding: 12em 0;
+  padding: 10em 0;
 }
 
 .hero > h1 {
@@ -421,16 +473,16 @@ a {
   justify-content: center;
 }
 
-.footer-nav__links {
+.footer-nav__links-list {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   gap: 1.5em;
   margin-top: 1.5em;
 }
 
 @media (min-width: 768px) {
-  .footer-nav__links {
-    flex-flow: row;
+  .footer-nav__links-list {
+    flex-direction: row;
     justify-content: center;
   }
 }
@@ -440,6 +492,12 @@ a {
   padding: 0.5em 0;
   border-bottom: 1px solid transparent;
   transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .footer-nav__link {
+    font-size: 1rem;
+  }
 }
 
 .footer-nav__link:hover {
